@@ -31,7 +31,7 @@
             <div class="row">
                 <div class="form-group col-md-6">
                     <label for="populacao">Populacao</label>
-                    <input type="text" class="form-control" name="populcao" id="populacao" maxlength="25" placeholder="opcional; quantidade da população">
+                    <input type="text" class="form-control" name="populacao" id="populacao" maxlength="25" placeholder="opcional; quantidade da população">
                 </div>
 
                 <div class="form-group col-md-6">

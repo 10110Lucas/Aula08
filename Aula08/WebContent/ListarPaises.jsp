@@ -28,7 +28,7 @@
                             Deseja realmente excluir este pais?
                         </div>
                         <div class="modal-footer">
-                            <form action="ManterCliente.do" method="post">
+                            <form action="ManterPais.do" method="post">
                                 <input type="hidden" name="id" id="id_excluir" />
                                 <button type="submit" class="btn btn-primary" name="acao" value="Excluir">Sim</button>
                                 <button type="button" class="btn btn-default" data-dismiss="modal">N&atilde;o</button>

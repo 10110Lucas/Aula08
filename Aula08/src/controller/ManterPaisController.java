@@ -44,17 +44,23 @@ public class ManterPaisController extends HttpServlet {
 		String pPopulacao = request.getParameter("populacao");
 		String pArea = request.getParameter("area");
 		int id = -1;
+		long populacao = 0;
+		double area = 0;
 		try {
 			id = Integer.parseInt(pId);
-		} catch (NumberFormatException e) {
-
-		}
-
+		} catch (NumberFormatException e) { }
+		
+		try {
+			populacao = Long.parseLong(pPopulacao);
+			area = Double.parseDouble(pArea);
+		} catch (NumberFormatException e) { }
+		
+		
 		Pais pais = new Pais();
 		pais.setId(id);
 		pais.setNome(pNome);
-		pais.setPopulacao(Long.parseLong(pPopulacao));
-		pais.setArea(Double.parseDouble(pArea));
+		pais.setPopulacao(populacao);
+		pais.setArea(area);
 		
 		PaisService ps = new PaisService();
 		RequestDispatcher view = null;

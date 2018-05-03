@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import service.VendedorService;
+import service.PaisesService;
 import model.Pais;
 
 /**
@@ -31,14 +31,14 @@ public class ListarPaisesController extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		String chave = request.getParameter("data[search]");
 		String acao = request.getParameter("acao");
-		VendedorService vendedor = new VendedorService();
+		PaisesService ps = new PaisesService();
 		ArrayList<Pais> lista = null;
 		HttpSession session = request.getSession();
 		if (acao.equals("buscar")) {
 			if (chave != null && chave.length() > 0) {
-				lista = vendedor.listarPaises(chave);
+				lista = ps.listarPaises(chave);
 			} else {
-				lista = vendedor.listarPaises();
+				lista = ps.listarPaises();
 			}
 			session.setAttribute("lista", lista);
 		} else if (acao.equals("reiniciar")) {
